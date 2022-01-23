@@ -33,8 +33,8 @@ Uma vez logado, o usuário conseguirá acesso à lista de usuários e séries j�
 *Não exige corpo da requisição*  
 *Sem autenticação (token) no cabeçalho da requisição*  
 **GET /songs - Formato da Resposta - STATUS 200**  
-
-[
+```js
+[  
 	{
 		"song": "Song 2",  
 		"album": "Blur",  
@@ -63,12 +63,13 @@ Uma vez logado, o usuário conseguirá acesso à lista de usuários e séries j�
 		"id": 3  
 	}  
 ]  
-
+```
 <!-- -------------------------------------------------------------- -->
-#### *Requisição de Séries*
+#### *Requisição de Séries*  
 *Não exige corpo da requisição*  
 *Com autenticação (token) no cabeçalho da requisição*  
-**GET /series - Formato da Resposta - STATUS 200**
+**GET /series - Formato da Resposta - STATUS 200**  
+```js
 [  
 	{  
  		"serie": "Lost",  
@@ -95,12 +96,13 @@ Uma vez logado, o usuário conseguirá acesso à lista de usuários e séries j�
 		"id": 3  
 	}  
 ]  
+```
 
-
-#### *Requisição de Usuários*
+#### *Requisição de Usuários*  
 *Não exige corpo da requisição*  
 *Com autenticação (token) no cabeçalho da requisição*  
-**GET /users - Formato da Resposta - STATUS 200**
+**GET /users - Formato da Resposta - STATUS 200**  
+```js
 [  
 	{  
 		"email": "burkejuliet@lost.com",  
@@ -124,15 +126,15 @@ Uma vez logado, o usuário conseguirá acesso à lista de usuários e séries j�
 		"id": 3  
 	},  
 ]  
-
+```
 
 
 <!-- -------------------------------------------------------------- -->
 # Enviando Dados à API - POST
 
-## Cadastros
+## Cadastros  
 
-#### *Cadastro de usuário*
+#### *Cadastro de usuário*  
 Endpoints que permitem o cadastro na lista de **users**:  
 
 * POST /register  
@@ -142,20 +144,21 @@ Endpoints que permitem o cadastro na lista de **users**:
 Qualquer um dos 3.  
 
 *Sem autenticação (token) no cabeçalho da requisição*  
-**POST /register - Formato da Requisição**
-
+**POST /register - Formato da Requisição**  
+```js
 {  
 	"name": "Kate Austen",  
 	"email": "austenkate@lost.com",  
 	"password": "wW*8uuuu",  
 	"age": 32  
 }  
-
+```  
 Em caso de sucesso, esta será a resposta:  
 
-**POST /register - Formato da Resposta - STATUS 201**
+**POST /register - Formato da Resposta - STATUS 201**  
+```js
 {  
-	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF1c3RlbmthdGVAbG9zdC5jb20iLCJpYXQiOjE2NDI4MjMxMjcsImV4cCI6MTY0MjgyNjcyNywic3ViIjoiNSJ9.WXlizD3Y1d7Bzr9IEp7bqHszsEeNl9TSHseux_ButUQ",
+	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF1c3RlbmthdGVAbG9zdC5jb20iLCJpYXQiOjE2NDI4MjMxMjcsImV4cCI6MTY0MjgyNjcyNywic3ViIjoiNSJ9.WXlizD3Y1d7Bzr9IEp7bqHszsEeNl9TSHseux_ButUQ",  
 	"user": {  
 		"email": "austenkate@lost.com",  
 		"name": "Kate Austen",  
@@ -163,27 +166,28 @@ Em caso de sucesso, esta será a resposta:
 		"id": 5  
 	}  
 }  
-
+```  
 Campos requeridos, obrigatórios para cadastro:   
 1. email   
 2. password  
    
 Do contrário, a resposta será:  
 
-**POST /register - Formato da Resposta - STATUS 400**
+**POST /register - Formato da Resposta - STATUS 400**    
 "Email and password are required"  
 
 Já os demais campos são opcionais.   
 
 * Caso tente cadastrar um novo usuário com e-mail já existente no banco de dados, a resposta será:  
 
-**POST /register - Formato da Resposta - STATUS 400**
+**POST /register - Formato da Resposta - STATUS 400**    
 "Email already exists"  
 
-#### *Cadastro de Música*
+#### *Cadastro de Música*  
 *Com autenticação (token) no cabeçalho da requisição*  
-**POST /songs - Formato da Requisição**
-{  
+**POST /songs - Formato da Requisição**    
+```js
+{    
 	"song": "Catching the Butterfly",  
 	"album": "Urban Hymns",  
 	"release_date": " September 30, 1997",  
@@ -191,8 +195,9 @@ Já os demais campos são opcionais.
 	"country": "England",  
 	"additional_informations": "https://www.allmusic.com/album/urban-hymns-mw0000027235"  
 }  
-
-**POST /songs - Formato da Resposta - Status 201**
+```  
+**POST /songs - Formato da Resposta - Status 201**  
+```js
 {  
 	"song": "Catching the Butterfly",  
 	"album": "Urben Hymns",  
@@ -202,19 +207,22 @@ Já os demais campos são opcionais.
 	"additional_informations": "https://www.allmusic.com/album/urban-hymns-mw0000027235",  
 	"id": 4  
 }  
-
-#### *Cadastro de Série*
+```  
+#### *Cadastro de Série*  
 *Com autenticação (token) no cabeçalho da requisição*  
-**POST /series - Formato da Requisição**
-{  
+**POST /series - Formato da Requisição**  
+```js
+{    
 	"serie": "Lost",  
 	"year": 2004,  
 	"seasons": 6,  
 	"genre": "fiction",  
 	"additional_informations": "https://www.imdb.com/title/tt0411008/?ref_=vp_back"  
 }  
+```
 
-**POST /series - Formato da Resposta - Status 201**
+**POST /series - Formato da Resposta - Status 201**  
+```js
 {  
 	"serie": "Lost",  
 	"year": 2004,  
@@ -223,9 +231,10 @@ Já os demais campos são opcionais.
 	"additional_informations": "https://www.imdb.com/title/tt0411008/?ref_=vp_back",  
 	"id": 4  
 }  
+``` 
 
 <!-- -------------------------------------------------------------- -->
-## Login
+## Login   
 Endpoints que assentem a um usuário previamente cadastrado na lista de **users** acesso à área restrita:  
 
 * POST /login   
@@ -234,14 +243,16 @@ Endpoints que assentem a um usuário previamente cadastrado na lista de **users*
 Qualquer 1 dos 2.  
 
 *Sem autenticação (token) no cabeçalho da requisição*  
-**POST /login - Formato da Requisição**  
+**POST /login - Formato da Requisição**    
+```js
 {  
 	"email": "jarrahsayid@lost.com",  
 	"password": "wW*8uuuu"  
 }  
-
+```  
 Resposta em caso de sucesso:  
-**POST /login - Formato da Resposta - STATUS 200**  
+**POST /login - Formato da Resposta - STATUS 200**   
+```js 
 {  
 	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphcnJhaHNheWlkQGxvc3QuY29tIiwiaWF0IjoxNjQyODIxNjEwLCJleHAiOjE2NDI4MjUyMTAsInN1YiI6IjMifQ.XCOal2_Bgjrt2eFmuZvA8oIDVK-mkmTQPgwtaBWT4D8",  
 	"user": {  
@@ -251,17 +262,18 @@ Resposta em caso de sucesso:
 		"id": 3  
 	}  
 }  
-
+```  
 Repare que a resposta retorna **user** e **accessToken**. Posso armazenar ambos no localStorage para fazer a gestão do usuário no front end.  
 
 * Caso a senha estiver errada:  
 
 **POST /login - Formato da Requisição**  
+```js
 {  
 	"email": "humedesmond@lost.com",  
 	"password": "wW*8uuu"  
 }  
-
+```  
 **POST /login - Formato da Resposta - STATUS 400**  
 "Incorrect password"  
 
@@ -271,7 +283,7 @@ Repare que a resposta retorna **user** e **accessToken**. Posso armazenar ambos 
 "Cannot find user"  
 
 <!-- -------------------------------------------------------------- -->
-# Atualizando Dados Parciais (1 ou mais campos específicos) de um Recurso da API - PATCH
+# Atualizando Dados Parciais (1 ou mais campos específicos) de um Recurso da API - PATCH  
 
 Se seu desejo for alterar dados já registrados na API, há 2 opções de verbos HTTP (*Hypertext Transfer Protocol*):  
 1. PATCH  
@@ -279,6 +291,7 @@ Se seu desejo for alterar dados já registrados na API, há 2 opções de verbos
 
 Qual a diferença?  
 O tipo de atualização que deseja fazer. Considere o usuário com os seguintes dados:  
+```js
 {  
 	"email": "humedesmond@lost.com",  
 	"password": "$2a$10$AyIevQ.C6dngH7ue20bnOeptMSPT.WhKPkV/9chWEsdGLtVawYMui",  
@@ -286,16 +299,18 @@ O tipo de atualização que deseja fazer. Considere o usuário com os seguintes 
 	"age": 39,  
 	"id": 2  
 }  
-
+```  
 Digamos que deseje alterar somente sua idade (age), de 39 para 32 anos. Use PATCH, como no exemplo abaixo:  
 
 *Com autenticação (token) no cabeçalho da requisição*  
 **PATCH /users/:id - Formato da Requisição**  
+```js
 {  
 	"age": 2  
 }  
-
+```  
 **PATCH /users/:id - Formato da Resposta - STATUS 200**  
+```js
 {  
 	"email": "humedesmond@lost.com",  
 	"password": "$2a$10$AyIevQ.C6dngH7ue20bnOeptMSPT.WhKPkV/9chWEsdGLtVawYMui",  
@@ -303,7 +318,7 @@ Digamos que deseje alterar somente sua idade (age), de 39 para 32 anos. Use PATC
 	"age": 2,  
 	"id": 2  
 }  
-
+```  
 Repare que somente o campo idade (age) foi alterado. Os demais campos permanecem os mesmos (The Song Remains the Same - Led Zeppelin, 1976). Entendedores entenderão. 😉  
 Mas, caso seu objetivo seja substituir todos os dados anteriores de um usuário pela nova idade (age), use PUT.   
 Nos endpoints /songs e /series não precisa pôr os campos email e password junto, somente o campo que quer alterar.   
@@ -312,21 +327,24 @@ Exemplo abaixo:
 
 *Com autenticação (token) no cabeçalho da requisição*  
 **PUT /users/:id - Formato da Requisição**  
+```js
 {  
 	"email": "humedesmond@lost.com",  
 	"password": "wW*8uuuu",  
 	"age": 2  
 }  
-
+```  
 **PUT /users/:id - Formato da Resposta - STATUS 200**  
+```js
 {  
 	"email": "humedesmond@lost.com",  
 	"password": "$2a$10$MnDrzQzenyfs4OP6HzXyXeJUavYsIFCwrwMipO7dNx5NYnlMBSm3.",  
 	"age": 2,  
 	"id": 2  
 }  
-
+```  
 Lembre-se que, antes da requisição com PUT, o usuário possuía os campos name, email, password, age e id (gerado automaticamente):  
+```js
 "users: {  
 	"name": "Desmond David Hume",  
 	"email": "humedesmond@lost.com",  
@@ -334,7 +352,7 @@ Lembre-se que, antes da requisição com PUT, o usuário possuía os campos name
 	"age": 39,  
 	"id": 2  
 }  
-
+```  
 Note, porém, que, após a requisição com PUT, o campo name sumiu, restando somente os campos essenciais email, password e id, além do campo solicitado, age.   
 
 Mais informações sobre requisições com PUT a seguir.  
@@ -346,43 +364,47 @@ Os exemplos a seguir simulam uma atualização dos dados de um usuário, mas pod
 
 *Com autenticação (token) no cabeçalho da requisição*   
 **PUT /users/:id - Formato da Requisição**  
+```js
 {  
 	"email": "austenkate@lost.com",  
 	"password": "wW*8uuuu",  
 	"age": 99  
 }  
-
+```  
 **PUT /users/:id - Formato da Resposta - STATUS 200**  
+```js
 {  
 	"email": "austenkate@lost.com",  
 	"password": "$2a$10$QI3OtxTcULGYzzif1HJCHuul0dNT7wgSO9LTvR.ZIl8wddqAsXOA.",  
 	"age": 99,  
 	"id": 5  
 }  
-
+```  
 Repare que, conquanto o interesse fosse atualizar apenas a idade do usuário do id 5 no exemplo acima, os campos email e password são requeridos.   
 
 * Caso queira atualizar, mas não insira os campos email e password:  
 
 *Com autenticação (token) no cabeçalho da requisição*  
 **PUT /users/:id - Formato da requisição**  
+```js
 {  
     "age": 100  
 }  
-
+```  
 **PUT /users/:id - Formato da Resposta - STATUS 400**  
 "Email and password are required"  
 
 <!-- -------------------------------------------------------------- -->
-# Deletando Dados da API - DELETE
+# Deletando Dados da API - DELETE  
 
 O exemplo abaixo simula uma deleção de dados no endpoint /songs, mas o mesmo seria aplicado nos endpoints /series e /users.  
 
 *Não exige corpo da requisição*      
 *Com autenticação (token) no cabeçalho da requisição*        
-**DELETE /songs/:id - Formato da Resposta - STATUS 200**    
+**DELETE /songs/:id - Formato da Resposta - STATUS 200**   
+```js 
 {}    
-
+```
 
 
 
