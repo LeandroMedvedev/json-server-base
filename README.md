@@ -173,16 +173,18 @@ Campos requeridos, obrigatórios para cadastro:
    
 Do contrário, a resposta será:  
 
-**POST /register - Formato da Resposta - STATUS 400**    
+**POST /register - Formato da Resposta - STATUS 400**  
+```js  
 "Email and password are required"  
-
+```  
 Já os demais campos são opcionais.   
 
 * Caso tente cadastrar um novo usuário com e-mail já existente no banco de dados, a resposta será:  
 
-**POST /register - Formato da Resposta - STATUS 400**    
+**POST /register - Formato da Resposta - STATUS 400**   
+```js 
 "Email already exists"  
-
+```  
 #### *Cadastro de Música*  
 *Com autenticação (token) no cabeçalho da requisição*  
 **POST /songs - Formato da Requisição**    
@@ -280,8 +282,9 @@ Repare que a resposta retorna **user** e **accessToken**. Posso armazenar ambos 
 * Caso o e-mail estiver errado ou email e password estiverem errados:  
 
 **POST /login - Formato da resposta - STATUS 400**  
+```js
 "Cannot find user"  
-
+```  
 <!-- -------------------------------------------------------------- -->
 # Atualizando Dados Parciais (1 ou mais campos específicos) de um Recurso da API - PATCH  
 
@@ -392,8 +395,9 @@ Repare que, conquanto o interesse fosse atualizar apenas a idade do usuário do 
 }  
 ```  
 **PUT /users/:id - Formato da Resposta - STATUS 400**  
+```js
 "Email and password are required"  
-
+```  
 <!-- -------------------------------------------------------------- -->
 # Deletando Dados da API - DELETE  
 
