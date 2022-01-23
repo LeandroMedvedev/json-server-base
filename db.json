@@ -1,11 +1,80 @@
 {
   "users": [
     {
-      "email": "kenzinho@mail.com",
-      "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
-      "name": "Kenzinho",
-      "age": 38,
+      "name": "Juliet Burke",
+      "email": "burkejuliet@lost.com",
+      "password": "$2a$10$aPw08iEpvMGpn3uHpEGepui9rAY7eBPDyYkFmDriHbFxBl0G57yTK",
+      "age": 37,
       "id": 1
+    },
+    {
+      "name": "Desmond David Hume",
+      "email": "humedesmond@lost.com",
+      "password": "$2a$10$fBQUS.orSsZs33uk2gdvxeYseTOfoNx9k.Dv64sFSUdQ9Xg/Ej7yi",
+      "age": 36,
+      "id": 2
+    },
+    {
+      "name": "Kate Austen",
+      "email": "austenkate@lost.com",
+      "password": "$2a$10$oU13/PCcdckouJMlCBSKDePxD6BJxNulzAGzHx0TCAGQD3p3Gv2oO",
+      "age": 34,
+      "id": 3
+    }
+  ],
+  "songs": [
+    {
+      "song": "Song 2",
+      "album": "Blur",
+      "release_date": "February 10, 1997",
+      "band": "Oasis",
+      "country": "England",
+      "additional_informations": "https://www.allmusic.com/album/blur-mw0000082694",
+      "id": 1
+    },
+    {
+      "song": "Go Let It Out",
+      "album": "Standing on the Shoulder of Giants Album",
+      "release_date": "February 23, 2000",
+      "band": "Oasis",
+      "country": "England",
+      "additional_informations": "https://www.allmusic.com/album/standing-on-the-shoulder-of-giants-mw0001955486",
+      "id": 2
+    },
+    {
+      "song": "On Your Own",
+      "album": "A Northern Soul",
+      "release_date": "July 3, 1995",
+      "band": "The Verve",
+      "country": "England",
+      "additional_informations": "https://www.allmusic.com/album/a-northern-soul-mw0000126607",
+      "id": 3
+    }
+  ],
+  "series": [
+    {
+      "serie": "Lost",
+      "year": 2004,
+      "seasons": 6,
+      "genre": "fiction",
+      "additional_informations": "https://www.imdb.com/title/tt0411008/?ref_=vp_back",
+      "id": 1
+    },
+    {
+      "serie": "Seinfeld",
+      "year": 1989,
+      "seasons": 9,
+      "genre": "sitcom",
+      "additional_informations": "https://www.imdb.com/video/vi4273980185?playlistId=tt0098904&ref_=tt_ov_vi",
+      "id": 2
+    },
+    {
+      "serie": "Dawson's Creek",
+      "year": 1998,
+      "seasons": 6,
+      "genre": "drama",
+      "additional_informations": "https://www.imdb.com/title/tt0118300/",
+      "id": 3
     }
   ]
 }
