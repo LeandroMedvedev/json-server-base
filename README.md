@@ -277,8 +277,9 @@ Repare que a resposta retorna **user** e **accessToken**. Posso armazenar ambos 
 }  
 ```  
 **POST /login - Formato da Resposta - STATUS 400**  
+```js
 "Incorrect password"  
-
+```  
 * Caso o e-mail estiver errado ou email e password estiverem errados:  
 
 **POST /login - Formato da resposta - STATUS 400**  
