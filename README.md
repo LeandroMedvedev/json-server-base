@@ -392,7 +392,7 @@ Repare que, conquanto o interesse fosse atualizar apenas a idade do usuário do 
 **PUT /users/:id - Formato da requisição**  
 ```js
 {  
-    "age": 100  
+"age": 100  
 }  
 ```  
 **PUT /users/:id - Formato da Resposta - STATUS 400**  
