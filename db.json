@@ -1,80 +1,135 @@
 {
   "users": [
     {
-      "name": "Juliet Burke",
-      "email": "burkejuliet@lost.com",
-      "password": "$2a$10$aPw08iEpvMGpn3uHpEGepui9rAY7eBPDyYkFmDriHbFxBl0G57yTK",
-      "age": 37,
-      "id": 1
+      "email": "lockejohn@lost.com",
+      "password": "$2a$10$.LTda9mG7nLdPODGiwQ4ce9ml.DHSAy.6N/AnVDHLYXR9jd5uIaCK",
+      "id": 1,
+      "name": "John Locke",
+      "confirm_password": "wW*8uuuu"
     },
     {
-      "name": "Desmond David Hume",
-      "email": "humedesmond@lost.com",
-      "password": "$2a$10$fBQUS.orSsZs33uk2gdvxeYseTOfoNx9k.Dv64sFSUdQ9Xg/Ej7yi",
-      "age": 36,
-      "id": 2
-    },
-    {
-      "name": "Kate Austen",
       "email": "austenkate@lost.com",
-      "password": "$2a$10$oU13/PCcdckouJMlCBSKDePxD6BJxNulzAGzHx0TCAGQD3p3Gv2oO",
-      "age": 34,
-      "id": 3
-    }
-  ],
-  "songs": [
-    {
-      "song": "Song 2",
-      "album": "Blur",
-      "release_date": "February 10, 1997",
-      "band": "Oasis",
-      "country": "England",
-      "additional_informations": "https://www.allmusic.com/album/blur-mw0000082694",
-      "id": 1
-    },
-    {
-      "song": "Go Let It Out",
-      "album": "Standing on the Shoulder of Giants Album",
-      "release_date": "February 23, 2000",
-      "band": "Oasis",
-      "country": "England",
-      "additional_informations": "https://www.allmusic.com/album/standing-on-the-shoulder-of-giants-mw0001955486",
+      "password": "$2a$10$JFFyzlaKxd/NFqXBuHgare3oNCcvjE/Ehv9a.z.HlZav5Tx0JfKIa",
+      "name": "Kate Austen",
+      "confirm_password": "wW*8uuuu",
       "id": 2
     },
     {
-      "song": "On Your Own",
-      "album": "A Northern Soul",
-      "release_date": "July 3, 1995",
-      "band": "The Verve",
-      "country": "England",
-      "additional_informations": "https://www.allmusic.com/album/a-northern-soul-mw0000126607",
+      "email": "reyeshugo@lost.com",
+      "password": "$2a$10$ulFQO6/c3sFbv9nVfDdI0uBpv9yeJVdjX9UUkeIPP1Hrn89D8CLM.",
+      "name": "Hugo Reyes",
+      "confirm_password": "wW*8uuuu",
       "id": 3
+    },
+    {
+      "email": "humedesmond@lost.com",
+      "password": "$2a$10$nlqZctQaHOXPIlcb.vgV5ubHK.zZ247xW8PQeCRAHPvYzm6SarE8G",
+      "name": "Desmond Hume",
+      "confirm_password": "wW*8uuuu",
+      "id": 4
+    },
+    {
+      "email": "burkejuliet@lost.com",
+      "password": "$2a$10$DszZsuZKwyxfY6Pz65Yjd.c4aJDfQHV0VfPNPOVy1l0.luID07P0.",
+      "name": "Juliet Burke",
+      "confirm_password": "wW*8uuuu",
+      "id": 5
+    },
+    {
+      "email": "sheppardjack@lost.com",
+      "password": "$2a$10$d.bw3E01o5SfjYuP5IPGcuck3tGjIiWan4XefVGXi0WXQcqI203cC",
+      "name": "Jack Sheppard",
+      "id": 6
+    },
+    {
+      "email": "jarrahsayid@lost.com",
+      "password": "$2a$10$qfX6gxSaL5GOGOZ7FKStuu9B/3VXwxGgxVRkvqEiv/s9776tqrceK",
+      "name": "Sayid Jarrah",
+      "id": 7
+    },
+    {
+      "email": "fordjames@lost.com",
+      "password": "$2a$10$7EabUdvi9Bkacf5ysiYEzONvamQtyVHFEN/ob0RNT8KRR96b4QQ..",
+      "name": "James Ford",
+      "id": 8
+    },
+    {
+      "email": "linusbenjamin@lost.com",
+      "password": "$2a$10$gZJhkkDCFT2s3wJ5JWVnSOYaFz5Hg0cPorVNXKT6c3iDDpip3p1PG",
+      "name": "Benjamin Linus",
+      "id": 9
+    },
+    {
+      "email": "alpertrichard@lost.com",
+      "password": "$2a$10$uX9/n34q15nF4SXpbb1PeejvhmkI1bA01GVy0P7YzssiMPTG1usyi",
+      "name": "Richard Alpert",
+      "confirm_password": "wW*8uuuu",
+      "id": 10
     }
   ],
-  "series": [
+  "burgers": [
     {
-      "serie": "Lost",
-      "year": 2004,
-      "seasons": 6,
-      "genre": "fiction",
-      "additional_informations": "https://www.imdb.com/title/tt0411008/?ref_=vp_back",
-      "id": 1
+      "id": 1,
+      "name": "Burger Steak House",
+      "category": "Sanduíches",
+      "price": 14.99,
+      "img": "https://bourges.hollysdiner.fr/wp-content/uploads/sites/7/2019/02/CountryBurger.png"
     },
     {
-      "serie": "Seinfeld",
-      "year": 1989,
-      "seasons": 9,
-      "genre": "sitcom",
-      "additional_informations": "https://www.imdb.com/video/vi4273980185?playlistId=tt0098904&ref_=tt_ov_vi",
-      "id": 2
+      "id": 2,
+      "name": "Cheeseburger",
+      "category": "Sanduíches",
+      "price": 16.99,
+      "img": "https://media-s3-us-east-1.ceros.com/grey-dog-media/images/2021/07/01/9780d7b35e6b8bca1fe2c9f102abf77d/hamburger-all.png"
     },
     {
-      "serie": "Dawson's Creek",
-      "year": 1998,
-      "seasons": 6,
-      "genre": "drama",
-      "additional_informations": "https://www.imdb.com/title/tt0118300/",
-      "id": 3
+      "id": 3,
+      "name": "Big Apple Classics",
+      "category": "Sanduíches",
+      "price": 18.99,
+      "img": "https://bigappleclassics.com/wp-content/uploads/2021/11/Big-Apple-Classics-2.png"
+    },
+    {
+      "id": 4,
+      "name": "Hamburguer Vegetariano",
+      "category": "Sanduíches",
+      "price": 20.99,
+      "img": "https://fritesbutik.cz/____impro/1/onewebmedia/120330-Bicky-original_508x306.png?etag=%223d6e5-5e6b70c2%22&sourceContentType=image%2Fpng"
+    },
+    {
+      "id": 5,
+      "name": "Sofi Spritz",
+      "category": "Bebidas",
+      "price": 8.99,
+      "img": "https://media.danmurphys.com.au/dmo/product/63546-1.png"
+    },
+    {
+      "id": 6,
+      "name": "Lemon Iced tea",
+      "category": "Bebidas",
+      "price": 7.99,
+      "img": "https://d2iiahg0ip5afn.cloudfront.net/media/loverboy/images/617833878.lemon.can.png"
+    },
+    {
+      "id": 7,
+      "name": "Nuv Shake",
+      "category": "Sobremesas",
+      "price": 22.99,
+      "img": "https://nuvnuv.com.br/common/img/gelato_01.png"
+    },
+    {
+      "id": 8,
+      "name": "Milk-Shake Jah",
+      "category": "Sobremesas",
+      "price": 17.99,
+      "img": "https://jahdoacai.com.br/wp-content/uploads/2021/10/milkshake-jah-chocolate-belga.png"
+    },
+    {
+      "name": "Ovo",
+      "category": "Sanduíches",
+      "price": 16.99,
+      "img": "https://media-s3-us-east-1.ceros.com/grey-dog-media/images/2021/07/01/9780d7b35e6b8bca1fe2c9f102abf77d/hamburger-all.png",
+      "id": 9
     }
   ]
 }

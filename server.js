@@ -9,9 +9,8 @@ const router = jsonServer.router("db.json");
 app.db = router.db;
 
 const rules = auth.rewriter({
-   users: 660,
-   songs: 664,  // logado para escrever
-  series: 660,  // logado para escrever e ler
+  users: 660, // user must be logged to write or read the resource.
+  burgers: 664, // user must be logged to write the resource. Everyone can read the resource.
 });
 
 app.use(cors());
