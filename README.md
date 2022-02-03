@@ -1,136 +1,171 @@
-# Nome da API: 
-## Json-Server-Entertainment
+# Kenziehubserver  
 
-## Descrição
-Esta API (*Application Programming Interface*, ou Interface de Programação de Aplicação) possui um pequeno banco de dados em que constam inicialmente 3 músicas e 3 séries de TV pré-cadastradas, além de 3 usuários.
+## Descrição  
+Esta API possui um pequeno banco de dados em que constam inicialmente 10 usuários (endpoint /users) e 8 alimentos (endpoint /burgers) pré-cadastrados.  
+  
+Possibilita a qualquer usuário, logado ou não, visualizar todos os alimentos, e somente ao usuário logado escrever ou acessar suas informações.  
 
-Possibilita a qualquer usuário visualizar as músicas, mas apenas aos usuários logados visualizar os usuários ou séries já registrados.
+## Endpoints  
+Esta API dispõe de 6 endpoints:  
 
-## Endpoints
-Esta API tem um total de 7 endpoints:
+1. /register  
+2. /signup  
+3. /signin  
+4. /login  
+5. /users  
+6. /burgers  
 
-1. /register
-2. /signup
-3. /users
-4. /login
-5. /signin
-6. /songs
-7. /series
 
-<!-- -------------------------------------------------------------- -->
-Abaixo descreveremos as rotas que NÃO demandam autenticação e aquelas que DEMANDAM.  
+Abaixo descrevem-se as rotas que NÃO demandam autenticação e aquelas que DEMANDAM.  
 
 Rotas que DEMANDAM autenticação devem informar no cabeçalho da requisição o campo "Authorization", deste modo:  
 
-Authorization: Bearer {token}
+Authorization: Bearer {token}  
+ 
 
-Uma vez logado, o usuário conseguirá acesso à lista de usuários e séries já registradas.
+# Buscando Dados da API - GET  
 
-<!-- -------------------------------------------------------------- -->
-# Buscando Dados da API - GET
-
-#### *Requisição de Músicas*
+#### *Requisição de Hambúrgueres*  
 *Não exige corpo da requisição*  
-*Sem autenticação (token) no cabeçalho da requisição*  
-**GET /songs - Formato da Resposta - STATUS 200**  
-```js
-[  
+*Sem autenticação (token) no cabeçalho da requisição* 
+**GET /burgers - Formato da Resposta - STATUS 200**  
+```js  
+[
 	{
-		"song": "Song 2",  
-		"album": "Blur",  
-		"release_date": "February 10, 1997",  
-		"band": "Oasis",  
-		"country": "England",  
-		"additional_informations": "https://www.allmusic.com/album/blur-mw0000082694",  
-		"id": 1  
-	},  
-	{  
-		"song": "Go Let It Out",  
-		"album": "Standing on the Shoulder of Giants Album",  
-		"release_date": "February 23, 2000",  
-		"band": "Oasis",  
-		"country": "England",  
-		"additional_informations": "https://www.allmusic.com/album/standing-on-the-shoulder-of-giants-mw0001955486",
-		"id": 2  
-	},  
-	{  
-		"song": "On Your Own",  
-		"album": "A Northern Soul",  
-		"release_date": "July 3, 1995",  
-		"band": "The Verve",  
-		"country": "England",  
-		"additional_informations": "https://www.allmusic.com/album/a-northern-soul-mw0000126607",  
-		"id": 3  
-	}  
-]  
-```
-<!-- -------------------------------------------------------------- -->
-#### *Requisição de Séries*  
-*Não exige corpo da requisição*  
-*Com autenticação (token) no cabeçalho da requisição*  
-**GET /series - Formato da Resposta - STATUS 200**  
-```js
-[  
-	{  
- 		"serie": "Lost",  
-		"year": 2004,  
-		"seasons": 6,  
-		"genre": "fiction",  
-		"additional_informations": "https://www.imdb.com/title/tt0411008/?ref_=vp_back",  
-		"id": 1  
-	},  
-	{  
-		"serie": "Seinfeld",  
-		"year": 1989,  
-		"seasons": 9,  
-		"genre": "sitcom",  
-		"additional_informations": "https://www.imdb.com/video/vi4273980185?playlistId=tt0098904&ref_=tt_ov_vi",  
-		"id": 2   
-	},  
-	{  
-		"serie": "Dawson's Creek",  
-		"year": 1998,  
-		"seasons": 6,  
-		"genre": "drama",  
-		"additional_informations": "https://www.imdb.com/title/tt0118300/",  
-		"id": 3  
-	}  
-]  
-```
+		"id": 1,
+		"name": "Hamburger",
+		"category": "Sanduíches",
+		"price": 14,
+		"img": "https://i.ibb.co/fpVHnZL/hamburguer.png"
+	},
+	{
+		"id": 2,
+		"name": "Cheeseburger",
+		"category": "Sanduíches",
+		"price": 16,
+		"img": "https://i.ibb.co/djbw6LV/x-burgue.png"
+	},
+	{
+		"id": 3,
+		"name": "Big Kenzie",
+		"category": "Sanduíches",
+		"price": 18,
+		"img": "https://i.ibb.co/FYBKCwn/big-kenzie.png"
+	},
+	{
+		"name": "Combo Kenzie",
+		"category": "Combos",
+		"price": 26,
+		"img": "https://i.ibb.co/FYBKCwn/combo-kenzie.png",
+		"id": 4
+	},
+	{
+		"id": 5,
+		"name": "Fanta Guaraná",
+		"category": "Bebidas",
+		"price": 5,
+		"img": "https://i.ibb.co/cCjqmPM/fanta-guarana.png"
+	},
+	{
+		"id": 6,
+		"name": "Coca-Cola",
+		"category": "Bebidas",
+		"price": 4.99,
+		"img": "https://i.ibb.co/fxCGP7k/coca-cola.png"
+	},
+	{
+		"id": 7,
+		"name": "Ovomaltine",
+		"category": "Bebidas",
+		"price": 4.99,
+		"img": "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png"
+	},
+	{
+		"name": "Ovomaltine Cream",
+		"category": "Sobremesas",
+		"price": 10,
+		"img": "https://i.ibb.co/FYBKCwn/ovomaltinecream-kenzie.png",
+		"id": 8
+	}
+]
+```  
 
 #### *Requisição de Usuários*  
 *Não exige corpo da requisição*  
 *Com autenticação (token) no cabeçalho da requisição*  
 **GET /users - Formato da Resposta - STATUS 200**  
-```js
+```js  
 [  
 	{  
-		"email": "burkejuliet@lost.com",  
-		"password": "$2a$10$aPw08iEpvMGpn3uHpEGepui9rAY7eBPDyYkFmDriHbFxBl0G57yTK",  
-		"name": "Juliet Burke",  
-		"age": 37,  
+		"email": "lockejohn@lost.com",  
+		"password": "$2a$10$p0RZwwPL7F3e335BxNevw.OlbD/U/CgSuSThCU1hpHzQiKDilwb/i",  
+		"name": "John Locke",  
+		"confirm_password": "wW*8uuuu",  
 		"id": 1  
 	},  
 	{  
-		"email": "humedesmond@lost.com",  
-		"password": "$2a$10$AyIevQ.C6dngH7ue20bnOeptMSPT.WhKPkV/9chWEsdGLtVawYMui",  
-		"name": "Desmond David Hume",  
-		"age": 39,  
+		"email": "austenkate@lost.com",  
+		"password": "$2a$10$JFFyzlaKxd/NFqXBuHgare3oNCcvjE/Ehv9a.z.HlZav5Tx0JfKIa",  
+		"name": "Kate Austen",  
+		"confirm_password": "wW*8uuuu",  
 		"id": 2  
 	},  
 	{  
-		"email": "jarrahsayid@lost.com",  
-		"password": "$2a$10$emSs2JU7Xq9MiAi/E84WzeJllYfsZ8u.ePtSEjr9BUh13NxFfCvr6",  
-		"name": "Sayid Jarrah",  
-		"age": 36,  
+		"email": "reyeshugo@lost.com",  
+		"password": "$2a$10$ulFQO6/c3sFbv9nVfDdI0uBpv9yeJVdjX9UUkeIPP1Hrn89D8CLM.",  
+		"name": "Hugo Reyes",  
+		"confirm_password": "wW*8uuuu",  
 		"id": 3  
 	},  
+	{  
+		"email": "humedesmond@lost.com",  
+		"password": "$2a$10$nlqZctQaHOXPIlcb.vgV5ubHK.zZ247xW8PQeCRAHPvYzm6SarE8G",  
+		"name": "Desmond Hume",  
+		"confirm_password": "wW*8uuuu",  
+		"id": 4  
+	},  
+	{  
+		"email": "burkejuliet@lost.com",  
+		"password": "$2a$10$DszZsuZKwyxfY6Pz65Yjd.c4aJDfQHV0VfPNPOVy1l0.luID07P0.",  
+		"name": "Juliet Burke",  
+		"confirm_password": "wW*8uuuu",  
+		"id": 5  
+	},  
+	{  
+		"email": "sheppardjack@lost.com",  
+		"password": "$2a$10$d.bw3E01o5SfjYuP5IPGcuck3tGjIiWan4XefVGXi0WXQcqI203cC",  
+		"name": "Jack Sheppard",  
+		"id": 6  
+	},  
+	{  
+		"email": "jarrahsayid@lost.com",  
+		"password": "$2a$10$qfX6gxSaL5GOGOZ7FKStuu9B/3VXwxGgxVRkvqEiv/s9776tqrceK",  
+		"name": "Sayid Jarrah",  
+		"id": 7  
+	},  
+	{  
+		"email": "fordjames@lost.com",  
+		"password": "$2a$10$7EabUdvi9Bkacf5ysiYEzONvamQtyVHFEN/ob0RNT8KRR96b4QQ..",  
+		"name": "James Ford",  
+		"id": 8  
+	},  
+	{  
+		"email": "linusbenjamin@lost.com",  
+		"password": "$2a$10$gZJhkkDCFT2s3wJ5JWVnSOYaFz5Hg0cPorVNXKT6c3iDDpip3p1PG",  
+		"name": "Benjamin Linus",  
+		"id": 9  
+	},  
+	{  
+		"email": "alpertrichard@lost.com",  
+		"password": "$2a$10$uX9/n34q15nF4SXpbb1PeejvhmkI1bA01GVy0P7YzssiMPTG1usyi",  
+		"name": "Richard Alpert",  
+		"confirm_password": "wW*8uuuu",  
+		"id": 10  
+	}  
 ]  
-```
+```  
 
-
-<!-- -------------------------------------------------------------- -->
-# Enviando Dados à API - POST
+# Enviando Dados à API - POST  
 
 ## Cadastros  
 
@@ -150,19 +185,16 @@ Qualquer um dos 3.
 	"name": "Kate Austen",  
 	"email": "austenkate@lost.com",  
 	"password": "wW*8uuuu",  
-	"age": 32  
 }  
 ```  
-Em caso de sucesso, esta será a resposta:  
+Em caso de sucesso, esta será a resposta: 
 
-**POST /register - Formato da Resposta - STATUS 201**  
 ```js
 {  
 	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF1c3RlbmthdGVAbG9zdC5jb20iLCJpYXQiOjE2NDI4MjMxMjcsImV4cCI6MTY0MjgyNjcyNywic3ViIjoiNSJ9.WXlizD3Y1d7Bzr9IEp7bqHszsEeNl9TSHseux_ButUQ",  
 	"user": {  
 		"email": "austenkate@lost.com",  
 		"name": "Kate Austen",  
-		"age": 32,  
 		"id": 5  
 	}  
 }  
@@ -177,65 +209,37 @@ Do contrário, a resposta será:
 ```js  
 "Email and password are required"  
 ```  
-Já os demais campos são opcionais.   
+Já os demais campos são opcionais.
 
 * Caso tente cadastrar um novo usuário com e-mail já existente no banco de dados, a resposta será:  
 
 **POST /register - Formato da Resposta - STATUS 400**   
 ```js 
-"Email already exists"  
+"Email already exists" 
 ```  
-#### *Cadastro de Música*  
-*Com autenticação (token) no cabeçalho da requisição*  
-**POST /songs - Formato da Requisição**    
-```js
-{    
-	"song": "Catching the Butterfly",  
-	"album": "Urban Hymns",  
-	"release_date": " September 30, 1997",  
-	"band": "The Verve",  
-	"country": "England",  
-	"additional_informations": "https://www.allmusic.com/album/urban-hymns-mw0000027235"  
-}  
-```  
-**POST /songs - Formato da Resposta - Status 201**  
-```js
-{  
-	"song": "Catching the Butterfly",  
-	"album": "Urben Hymns",  
-	"release_date": " September 30, 1997",  
-	"band": "The Verve",  
-	"country": "England",  
-	"additional_informations": "https://www.allmusic.com/album/urban-hymns-mw0000027235",  
-	"id": 4  
-}  
-```  
-#### *Cadastro de Série*  
-*Com autenticação (token) no cabeçalho da requisição*  
-**POST /series - Formato da Requisição**  
-```js
-{    
-	"serie": "Lost",  
-	"year": 2004,  
-	"seasons": 6,  
-	"genre": "fiction",  
-	"additional_informations": "https://www.imdb.com/title/tt0411008/?ref_=vp_back"  
-}  
-```
 
-**POST /series - Formato da Resposta - Status 201**  
-```js
+#### *Cadastro de Hambúrguer*  
+*Com autenticação (token) no cabeçalho da requisição*  
+**POST /burgers - Formato da Requisição**   
+```js  
 {  
-	"serie": "Lost",  
-	"year": 2004,  
-	"seasons": 6,  
-	"genre": "fiction",  
-	"additional_informations": "https://www.imdb.com/title/tt0411008/?ref_=vp_back",  
-	"id": 4  
+		"name": "Hambúrguer",  
+		"category": "Sanduíches",  
+		"price": 14,  
+		"img": "https://i.ibb.co/fpVHnZL/hamburguer.png"  
+	}  
+```  
+**POST /burgers - Formato da Resposta - Status 201**  
+```js  
+{  
+    "name": "Hambúrguer",  
+	"category": "Sanduíches",  
+	"price": 14,  
+	"img": "https://i.ibb.co/fpVHnZL/hamburguer.png"  
+	"id": 1,  
 }  
-``` 
+```  
 
-<!-- -------------------------------------------------------------- -->
 ## Login   
 Endpoints que assentem a um usuário previamente cadastrado na lista de **users** acesso à área restrita:  
 
@@ -246,12 +250,13 @@ Qualquer 1 dos 2.
 
 *Sem autenticação (token) no cabeçalho da requisição*  
 **POST /login - Formato da Requisição**    
-```js
+```js  
 {  
 	"email": "jarrahsayid@lost.com",  
 	"password": "wW*8uuuu"  
 }  
 ```  
+
 Resposta em caso de sucesso:  
 **POST /login - Formato da Resposta - STATUS 200**   
 ```js 
@@ -286,7 +291,7 @@ Repare que a resposta retorna **user** e **accessToken**. Posso armazenar ambos 
 ```js
 "Cannot find user"  
 ```  
-<!-- -------------------------------------------------------------- -->
+
 # Atualizando Dados Parciais (1 ou mais campos específicos) de um Recurso da API - PATCH  
 
 Se seu desejo for alterar dados já registrados na API, há 2 opções de verbos HTTP (*Hypertext Transfer Protocol*):  
@@ -295,22 +300,21 @@ Se seu desejo for alterar dados já registrados na API, há 2 opções de verbos
 
 Qual a diferença?  
 O tipo de atualização que deseja fazer. Considere o usuário com os seguintes dados:  
-```js
+```js  
 {  
 	"email": "humedesmond@lost.com",  
-	"password": "$2a$10$AyIevQ.C6dngH7ue20bnOeptMSPT.WhKPkV/9chWEsdGLtVawYMui",  
+	"password": "$2a$10$AyIevQ.C6dngH7ue20bnOeptMSPT.WhKPkV/9chWEsdGLtVawYMui", 
+    "confirm_password": "wW*8uuuu", 
 	"name": "Desmond David Hume",  
-	"age": 39,  
-	"id": 2  
 }  
-```  
-Digamos que deseje alterar somente sua idade (age), de 39 para 32 anos. Use PATCH, como no exemplo abaixo:  
+```
+Digamos que deseje alterar somente seu nome. Use PATCH, como no exemplo abaixo:  
 
 *Com autenticação (token) no cabeçalho da requisição*  
 **PATCH /users/:id - Formato da Requisição**  
 ```js
 {  
-	"age": 2  
+	"name": "Desmond David"  
 }  
 ```  
 **PATCH /users/:id - Formato da Resposta - STATUS 200**  
@@ -318,105 +322,53 @@ Digamos que deseje alterar somente sua idade (age), de 39 para 32 anos. Use PATC
 {  
 	"email": "humedesmond@lost.com",  
 	"password": "$2a$10$AyIevQ.C6dngH7ue20bnOeptMSPT.WhKPkV/9chWEsdGLtVawYMui",  
-	"name": "Desmond David Hume",  
-	"age": 2,  
+    "confirm_password": "wW*8uuuu", 
+	"name": "Desmond David",  
 	"id": 2  
 }  
 ```  
-Repare que somente o campo idade (age) foi alterado. Os demais campos permanecem os mesmos (The Song Remains the Same - Led Zeppelin, 1976). Entendedores entenderão. 😉  
-Mas, caso seu objetivo seja substituir todos os dados anteriores de um usuário pela nova idade (age), use PUT.   
-Nos endpoints /songs e /series não precisa pôr os campos email e password junto, somente o campo que quer alterar.   
-Já, no endpoint /users, é obrigatória a inserção dos campos email e password junto com o campo que deseja modificar.  
-Exemplo abaixo:  
+Repare que somente o campo desejado foi modificado. Mas, caso seu objetivo seja substituir ou sobrescrever todos os dados anteriores de um usuário, use PUT.  
 
-*Com autenticação (token) no cabeçalho da requisição*  
-**PUT /users/:id - Formato da Requisição**  
-```js
-{  
-	"email": "humedesmond@lost.com",  
-	"password": "wW*8uuuu",  
-	"age": 2  
-}  
-```  
-**PUT /users/:id - Formato da Resposta - STATUS 200**  
-```js
-{  
-	"email": "humedesmond@lost.com",  
-	"password": "$2a$10$MnDrzQzenyfs4OP6HzXyXeJUavYsIFCwrwMipO7dNx5NYnlMBSm3.",  
-	"age": 2,  
-	"id": 2  
-}  
-```  
-Lembre-se que, antes da requisição com PUT, o usuário possuía os campos name, email, password, age e id (gerado automaticamente):  
-```js
-"users: {  
-	"name": "Desmond David Hume",  
-	"email": "humedesmond@lost.com",  
-	"password": "$2a$10$AyIevQ.C6dngH7ue20bnOeptMSPT.WhKPkV/9chWEsdGLtVawYMui",  
-	"age": 39,  
-	"id": 2  
-}  
-```  
-Note, porém, que, após a requisição com PUT, o campo name sumiu, restando somente os campos essenciais email, password e id, além do campo solicitado, age.   
 
-Mais informações sobre requisições com PUT a seguir.  
+# Atualizando Dados Completos de um Recurso da API - PUT  
 
-<!-- -------------------------------------------------------------- -->
-# Atualizando Dados Completos de um Recurso da API - PUT
+O uso do verbo HTTP PUT exige que os campos email e password estejam no corpo da requisição. Ou seja, adicione esses 2 campos mais o campo que deseja alterar. 
+Do contrário, a resposta retornada será:
 
-Os exemplos a seguir simulam uma atualização dos dados de um usuário, mas poderiam aplicar-se a atualização de dados de séries ou músicas também. A diferença é que, nos endpoints /songs e /series, não há necessidade de inserção dos campos email e password junto com o campo que desejo atualizar. Já no endpoint /users devo inserir também os campos email e password.   
-
-*Com autenticação (token) no cabeçalho da requisição*   
-**PUT /users/:id - Formato da Requisição**  
-```js
-{  
-	"email": "austenkate@lost.com",  
-	"password": "wW*8uuuu",  
-	"age": 99  
-}  
-```  
-**PUT /users/:id - Formato da Resposta - STATUS 200**  
-```js
-{  
-	"email": "austenkate@lost.com",  
-	"password": "$2a$10$QI3OtxTcULGYzzif1HJCHuul0dNT7wgSO9LTvR.ZIl8wddqAsXOA.",  
-	"age": 99,  
-	"id": 5  
-}  
-```  
-Repare que, conquanto o interesse fosse atualizar apenas a idade do usuário do id 5 no exemplo acima, os campos email e password são requeridos.   
-
-* Caso queira atualizar, mas não insira os campos email e password:  
-
-*Com autenticação (token) no cabeçalho da requisição*  
-**PUT /users/:id - Formato da requisição**  
-```js
-{  
-	"age": 100  
-}  
-```  
 **PUT /users/:id - Formato da Resposta - STATUS 400**  
-```js
+```js  
 "Email and password are required"  
 ```  
-<!-- -------------------------------------------------------------- -->
-# Deletando Dados da API - DELETE  
+Segue o modo correto:  
+*Com autenticação (token) no cabeçalho da requisição*   
+**PUT /users/:id - Formato da Requisição**   
+```js  
+{  
+	"name": "John A. Locke",  
+	"email": "lockejohn@lost.com",  
+	"password": "wW*8uuuu",  
+	"confirm_password": "wW*8uuuu"  
+}  
+```  
+**PUT /users/:id - Formato da Resposta - STATUS 200**   
+```js  
+{  
+	"name": "John A. Locke",  
+	"email": "lockejohn@lost.com",  
+	"password": "$2a$10$mZIKY/.q8Hx1ynbN5DhyleqSpXTHhPBR3xkn4t7bafTi9BEky1nWy",  
+	"confirm_password": "wW*8uuuu",  
+	"id": 1  
+}  
+```  
 
-O exemplo abaixo simula uma deleção de dados no endpoint /songs, mas o mesmo seria aplicado nos endpoints /series e /users.  
+Caso envie só os campos email e password, o usuário passará a ter somente esses 2 campos mais o id, os demais serão excluídos.  
+
+
+# Deletando Dados da API - DELETE  
 
 *Não exige corpo da requisição*      
 *Com autenticação (token) no cabeçalho da requisição*        
-**DELETE /songs/:id - Formato da Resposta - STATUS 200**   
-```js 
+**DELETE /users/:id - Formato da Resposta - STATUS 200**   
+```js  
 {}    
-```
-
-
-
-**made to the sounds of:**      
-1. Kings of Convenience - Misread, 		2004 https://www.youtube.com/watch?v=WOxE7IRizjI    
-2. Come On 				- The Verve, 	1997 https://www.youtube.com/watch?v=YWrvN-yXbWE    
-
-*04:19 am, January 22, 2022* 🌅  
-*Rio de Janeiro - Brazil*   
-*LeandroMedvedev* 🥲  
+```  
